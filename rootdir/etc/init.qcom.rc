@@ -765,7 +765,7 @@ on property:wifi.ftmd.load=true
     insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
 
 service cnss_diag /system/bin/cnss_diag -q
-    class main
+    class late_start
     user system
     group system wifi inet net_admin sdcard_rw media_rw diag
     oneshot
