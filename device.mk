@@ -156,16 +156,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/FOSSConfig.xml:system/etc/FOSSConfig.xml
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
+#PRODUCT_PACKAGES += \
+#    OneplusDoze
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
 
 # Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+#    Gello
 
 # GPS
 PRODUCT_PACKAGES += \
