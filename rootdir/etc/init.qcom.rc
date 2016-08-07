@@ -956,8 +956,8 @@ service qmuxd /system/bin/qmuxd
     user radio
     group radio audio bluetooth gps nfc qcom_diag
 
-#service netmgrd /system/bin/netmgrd
-#    class main
+service netmgrd /system/bin/netmgrd
+    class main
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -1466,7 +1466,3 @@ on post-fs-data
     write /sys/class/leds/green/duty_pcts "16,25,33,41,50,58,66,74,83,91,100"
     write /sys/class/leds/green/blink 1
 
-# Data Switch hack
-service netmgrd /system/bin/sh /system/etc/netmgrd_control.sh
-   seclabel u:r:netmgrd:s0
-   class main
