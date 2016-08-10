@@ -65,7 +65,7 @@
    "branch"     : "m-caf"
  },
  {
-   "repository" : "DirtyUnicorns/proprietary_vendor_oneplus",
+   "repository" : "DirtyUnicorns/android_vendor_oneplus",
    "target_path": "vendor/oneplus",
    "branch"     : "m-caf"
  }
