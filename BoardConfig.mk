@@ -21,7 +21,7 @@
 #
 
 # Boldly go.
-USE_CLANG_PLATFORM_BUILD := true
+#USE_CLANG_PLATFORM_BUILD := true
 
 # Inherit from oppo-common
 -include device/oppo/common/BoardConfigCommon.mk
@@ -150,7 +150,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 #  ifneq ($(TARGET_BUILD_VARIANT),eng)
 #    ifeq ($(WITH_DEXPREOPT),)
 #      WITH_DEXPREOPT := true
-#    endif
+#   endif
 #  endif
 #endif
 
