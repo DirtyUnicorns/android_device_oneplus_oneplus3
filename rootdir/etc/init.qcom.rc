@@ -1193,8 +1193,8 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
-#service ifaadaemon /system/bin/ifaadaemon
-#    class late_start
-#    user system
-#    group system
-#    writepid /dev/cpuset/system-background/tasks
+service ifaadaemon /system/bin/ifaadaemon
+    class late_start
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
