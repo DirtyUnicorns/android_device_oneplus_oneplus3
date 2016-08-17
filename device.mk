@@ -77,6 +77,13 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# Alipay
+PRODUCT_PACKAGES += \
+    org.ifaa.android.manager
+
+PRODUCT_BOOT_JARS += \
+    org.ifaa.android.manager
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
