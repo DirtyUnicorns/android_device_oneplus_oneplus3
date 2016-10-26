@@ -76,7 +76,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "sched"
 
     # Input boost configuration
-    write /sys/kernel/cpu_input_boost/ib_freqs "1228800 1324800"
+    write /sys/kernel/cpu_input_boost/ib_freqs "960000 1324800"
     write /sys/kernel/cpu_input_boost/ib_duration_ms 1000
     write /sys/kernel/cpu_input_boost/enabled 1
 
