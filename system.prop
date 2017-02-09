@@ -135,3 +135,6 @@ persist.timed.enable=true
 
 # Wifi
 wifi.interface=wlan0
+
+# Google Assistant
+ro.opa.eligible_device=true
