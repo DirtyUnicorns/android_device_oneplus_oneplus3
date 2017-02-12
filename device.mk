@@ -40,7 +40,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     fs_config_files
 
-# Alipay / WeChat
+# Alipay
+PRODUCT_PACKAGES += \
+    org.ifaa.android.manager
+
 PRODUCT_BOOT_JARS += \
     org.ifaa.android.manager
 
