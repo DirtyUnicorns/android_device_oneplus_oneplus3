@@ -60,16 +60,21 @@ on fs
 
     mount_all fstab.qcom --early
 
+    # Start HW service manager early
+    start hwservicemanager
+
 on late-fs
     # Enable audio and video device for bootanim
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
 
-    # Start bootanim and its dependencies
-    start servicemanager
+    # Start services for bootanim
     start surfaceflinger
-    start audioserver
     start bootanim
+    start hwcomposer-2-1
+    start configstore-hal-1-0
+    start gralloc-2-0
+
     # mount RW partitions which need run fsck
     mount_all fstab.qcom --late
 
