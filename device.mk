@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += telephony-ext
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.manager@1.0-java
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
