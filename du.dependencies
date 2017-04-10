@@ -45,11 +45,6 @@
    "branch"     : "n7x-caf"
  },
  {
-   "repository" : "DirtyUnicorns/android_vendor_qcom_binaries",
-   "target_path": "vendor/qcom/binaries",
-   "branch"     : "n7x-caf"
- },
- {
    "repository" : "DirtyUnicorns/android_vendor_oneplus",
    "target_path": "vendor/oneplus",
    "branch"     : "n7x-caf"
