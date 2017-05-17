@@ -27,8 +27,6 @@
 #
 #
 
-import init.qcom.power.rc
-
 on early-init
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
@@ -131,6 +129,20 @@ on boot
 
     chown root system /proc/tri-state-key/keyCode_bottom
     chmod 0660 /proc/tri-state-key/keyCode_bottom
+
+    # cpuquiet rqbalance permissions
+    chown system system /sys/devices/system/cpu/cpuquiet/nr_min_cpus
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/nr_min_cpus
+    chown system system /sys/devices/system/cpu/cpuquiet/nr_power_max_cpus
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/nr_power_max_cpus
+    chown system system /sys/devices/system/cpu/cpuquiet/nr_thermal_max_cpus
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/nr_thermal_max_cpus
+    chown system system /sys/devices/system/cpu/cpuquiet/rqbalance/balance_level
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/rqbalance/balance_level
+    chown system system /sys/devices/system/cpu/cpuquiet/rqbalance/nr_run_thresholds
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/rqbalance/nr_run_thresholds
+    chown system system /sys/devices/system/cpu/cpuquiet/rqbalance/nr_down_run_thresholds
+    chmod 0660 /sys/devices/system/cpu/cpuquiet/rqbalance/nr_down_run_thresholds
 
     # Graphics
     chown system graphics /sys/class/graphics/fb0/dyn_pu
