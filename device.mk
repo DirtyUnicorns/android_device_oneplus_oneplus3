@@ -53,6 +53,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    OneplusThreeDoze
+
 # TODO Alipay / WeChat
 #PRODUCT_BOOT_JARS += \
     org.ifaa.android.manager
