@@ -75,10 +75,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=23
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
     dalvik.vm.heapgrowthlimit=256m \
@@ -100,7 +96,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=3072 \
     ro.hwui.text_large_cache_height=2048
 
-# Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Alipay
@@ -156,7 +151,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
     libcamera_shim
 
 # Connectivity Engine support (CNE)
@@ -182,8 +176,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    fingerprintd \
-    OneplusPocketMode
+    fingerprintd
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
@@ -228,10 +221,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8996
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    libjni_livedisplay
 
 # Media
 PRODUCT_COPY_FILES += \
