@@ -117,6 +117,7 @@ void load_op3t(const char *model) {
     property_override("ro.product.device", "OnePlus3T");
     property_override("ro.build.description", "OnePlus3-user 7.1.1 NMF26F 7 dev-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:7.1.1/NMF26F/02072026:user/release-keys");
+    property_set("ro.power_profile.override", "power_profile_3t");
 }
 
 static void import_panel_prop(const std::string& key, const std::string& value, bool for_emulator) {
