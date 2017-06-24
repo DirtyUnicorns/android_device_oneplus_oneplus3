@@ -123,4 +123,6 @@
         <value>.2</value>
         <value>2</value>
     </array>
+    <allow-in-power-save package="com.google.android.gms" />
+    <allow-in-data-usage-save package="com.google.android.gms" />
 </device>
