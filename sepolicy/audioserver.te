@@ -1,1 +1,3 @@
 set_prop(audioserver, diag_prop);
+allow audioserver mpctl_socket:dir search;
+allow audioserver mpctl_socket:sock_file write;

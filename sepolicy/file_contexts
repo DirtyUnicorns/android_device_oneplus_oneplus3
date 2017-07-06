@@ -35,3 +35,6 @@
 /system/bin/remosaic_daemon                                     u:object_r:remosaic_daemon_exec:s0
 
 /dev/stune/top-app/schedtune\.boost                             u:object_r:schedtune_cpuset:s0
+
+/sys/module/lpm_levels/parameters(/.*)?                         u:object_r:sysfs_power_management:s0
+/data/misc/perfd(/.*)?                                          u:object_r:mpctl_socket:s0

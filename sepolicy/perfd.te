@@ -2,3 +2,13 @@ type schedtune_cpuset, fs_type;
 
 allow perfd mediacodec:process signull;
 allow perfd schedtune_cpuset:file w_file_perms;
+allow perfd cameraserver:process signull;
+allow perfd system_server:file write;
+allow perfd cgroup:file r_file_perms;
+allow perfd proc_kernel_sched:file rw_file_perms;
+allow perfd sysfs_power_management:file rw_file_perms;
+allow perfd sysfs_power_management:dir r_file_perms;
+allow perfd sysfs_power_management:dir search;
+allow perfd mpctl_socket:dir { add_name write };
+allow perfd mpctl_socket:sock_file { create setattr write unlink };
+allow perfd mpctl_socket:dir remove_name;
