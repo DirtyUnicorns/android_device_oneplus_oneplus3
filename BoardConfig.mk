@@ -151,6 +151,7 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Mainfest
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/configs/compatibility_matrix.xml
 
 # Media
 BOARD_SECCOMP_POLICY := $(PLATFORM_PATH)/seccomp
