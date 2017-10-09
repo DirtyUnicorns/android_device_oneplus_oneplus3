@@ -368,7 +368,7 @@ vr_module_t HAL_MODULE_INFO_SYM = {
         .module_api_version = VR_MODULE_API_VERSION_1_0,
         .hal_api_version    = HARDWARE_HAL_API_VERSION,
         .id                 = VR_HARDWARE_MODULE_ID,
-        .name               = "Marlin / Sailfish VR HAL",
+        .name               = "OnePlus 3 VR HAL",
         .author             = "The Android Open Source Project",
         .methods            = &vr_module_methods,
     },
