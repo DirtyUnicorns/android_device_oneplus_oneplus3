@@ -47,7 +47,7 @@ const int CPU_SENSORS[] = {4, 6, 9, 11};
 //qcom, limit-temp
 #define CPU_THROTTLING_THRESHOLD      60
 #define BATTERY_SHUTDOWN_THRESHOLD    60
-// device/google/marlin/thermal-engine-marlin.conf
+// device/oneplus/oneplus3/configs/thermal-engine.conf
 #define SKIN_THROTTLING_THRESHOLD     47
 #define SKIN_SHUTDOWN_THRESHOLD       70
 #define VR_THROTTLED_BELOW_MIN        58
@@ -272,7 +272,7 @@ thermal_module_t HAL_MODULE_INFO_SYM = {
         .module_api_version = THERMAL_HARDWARE_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = THERMAL_HARDWARE_MODULE_ID,
-        .name = "Marlin / Sailfish Thermal HAL",
+        .name = "OnePlus 3 Thermal HAL",
         .author = "The Android Open Source Project",
         .methods = &thermal_module_methods,
     },
