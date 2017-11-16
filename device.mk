@@ -233,9 +233,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/vendor/etc/thermal-engine.conf
 
 # Wifi
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ipacm \
-    ipacm-diag \
     IPACM_cfg.xml
 
 PRODUCT_PACKAGES += \
