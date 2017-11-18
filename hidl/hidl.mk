@@ -68,6 +68,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.1-service-qti
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

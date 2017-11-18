@@ -189,6 +189,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Power
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc \

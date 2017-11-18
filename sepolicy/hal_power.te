@@ -8,9 +8,6 @@ allow hal_power proc_touchpanel:file rw_file_perms;
 allow hal_power proc_touchpanel:dir search;
 
 userdebug_or_eng(`
-# debugfs entries are only needed in user-debug or eng builds
-allow hal_power debugfs_rpm:file r_file_perms;
-
 allow hal_power debugfs_wlan:dir r_dir_perms;
 allow hal_power debugfs_wlan:file r_file_perms;
 ')
