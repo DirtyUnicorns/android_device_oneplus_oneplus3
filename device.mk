@@ -250,9 +250,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-# Camera
 PRODUCT_PACKAGES += \
-    libcamera_shim
+    libcamera_parameters_shim
 
 # bluetooth
 PRODUCT_PACKAGES += \
