@@ -250,13 +250,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_shim
 
-#PRODUCT_PACKAGES += \
-    SnapdragonCamera \
-
-# power
-PRODUCT_PACKAGES += \
-    power.msm8996
-
 # bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor
