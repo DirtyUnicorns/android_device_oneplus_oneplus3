@@ -1,2 +1,4 @@
 allow platform_app rootfs:dir getattr;
 allow platform_app qemu_hw_mainkeys_prop:file { getattr open read };
+allow platform_app nfc_service:service_manager find;
+
