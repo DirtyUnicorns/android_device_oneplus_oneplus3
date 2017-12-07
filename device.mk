@@ -127,6 +127,8 @@ PRODUCT_BOOT_JARS += telephony-ext
 
 # HIDL
 PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
 
 # IPv6
