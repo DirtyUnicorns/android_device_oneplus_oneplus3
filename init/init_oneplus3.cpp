@@ -37,7 +37,7 @@
 #include "vendor_init.h"
 #include "property_service.h"
 #include "util.h"
-#include "log.h"
+#include "android-base/logging.h"
 
 void property_override(char const prop[], char const value[])
 {
@@ -117,7 +117,7 @@ void load_op3t(const char *model) {
     property_override("ro.product.device", "OnePlus3T");
     property_override("ro.build.description", "OnePlus3-user 8.0.0 OPR6.170623.013 83 release-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:8.0.0/OPR6.170623.013/10250816:user/release-keys");
-    property_set("ro.power_profile.override", "power_profile_3t");
+    android::init::property_set("ro.power_profile.override", "power_profile_3t");
 }
 
 static void import_panel_prop(const std::string& key, const std::string& value, bool for_emulator) {
@@ -139,7 +139,7 @@ void vendor_load_properties() {
         load_op3("ONEPLUS A3000");
         property_override("ro.telephony.default_network", "22");
         property_override("telephony.lteOnCdmaDevice", "1");
-        property_override("persist.radio.force_on_dc", "true");
+        property_override("persist.vendor.radio.force_on_dc", "true");
         /*property_override("ro.rf_version", "TD-SCDMA");
         property_override("ro.build.display.full_id", "ONEPLUS A3000");
         property_override("ro.build.display.id", "ONEPLUS A3000");*/
@@ -155,7 +155,7 @@ void vendor_load_properties() {
         load_op3("ONEPLUS A3000");
         property_override("ro.telephony.default_network", "22");
         property_override("telephony.lteOnCdmaDevice", "1");
-        property_override("persist.radio.force_on_dc", "true");
+        property_override("persist.vendor.radio.force_on_dc", "true");
         /*property_override("ro.rf_version", "TDD_FDD_Am");
         property_override("ro.build.display.full_id", "ONEPLUS A3000");
         property_override("ro.build.display.id", "ONEPLUS A3000");*/
@@ -164,7 +164,7 @@ void vendor_load_properties() {
         load_op3t("ONEPLUS A3010");
         property_override("ro.telephony.default_network", "22");
         property_override("telephony.lteOnCdmaDevice", "1");
-        property_override("persist.radio.force_on_dc", "true");
+        property_override("persist.vendor.radio.force_on_dc", "true");
         /*property_override("ro.rf_version", "TD-SCDMA");
         property_override("ro.build.display.full_id", "ONEPLUS A3010");
         property_override("ro.build.display.id", "ONEPLUS A3010");*/
@@ -180,7 +180,7 @@ void vendor_load_properties() {
         load_op3t("ONEPLUS A3000");
         property_override("ro.telephony.default_network", "22");
         property_override("telephony.lteOnCdmaDevice", "1");
-        property_override("persist.radio.force_on_dc", "true");
+        property_override("persist.vendor.radio.force_on_dc", "true");
         /*property_override("ro.rf_version", "TDD_FDD_Am");
         property_override("ro.build.display.full_id", "ONEPLUS A3000");
         property_override("ro.build.display.id", "ONEPLUS A3000");*/
@@ -190,5 +190,5 @@ void vendor_load_properties() {
 
     init_alarm_boot_properties();
 
-    import_kernel_cmdline(false, import_panel_prop);
+    android::init::import_kernel_cmdline(false, import_panel_prop);
 }
