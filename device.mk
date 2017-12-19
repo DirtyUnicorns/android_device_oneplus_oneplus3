@@ -256,9 +256,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8996
 
-PRODUCT_PACKAGES += \
-    Oneplus3Parts
-
 # bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor
