@@ -196,7 +196,7 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(BOARD_PATH)/sepolicy
 
-DEVICE_MANIFEST_FILE := $(BOARD_PATH)/configs/manifest.xml
+DEVICE_MANIFEST_FILE := $(BOARD_PATH)/hidl/manifest.xml
 
 TARGET_FS_CONFIG_GEN := $(BOARD_PATH)/configs/config.fs
 
