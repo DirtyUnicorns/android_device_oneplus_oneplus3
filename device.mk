@@ -21,7 +21,7 @@
 #
 
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
-$(call inherit-product, device/oneplus/oneplus3/hidl.mk)
+$(call inherit-product, device/oneplus/oneplus3/hidl/hidl.mk)
 $(call inherit-product, device/oneplus/oneplus3/permissions.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
