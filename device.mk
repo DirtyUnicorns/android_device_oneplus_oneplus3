@@ -29,39 +29,15 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/configs/init.qcom.sh:root/init.qcom.sh \
-    $(LOCAL_PATH)/configs/init.qcom.power.rc:root/init.qcom.power.rc \
-    $(LOCAL_PATH)/configs/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/configs/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    $(LOCAL_PATH)/configs/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/configs/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/configs/fstab.qcom:root/fstab.qcom
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
-# Display
+# Android_filesystem_config.h
 PRODUCT_PACKAGES += \
-    copybit.msm8996 \
-    gralloc.msm8996 \
-    hwcomposer.msm8996 \
-    memtrack.msm8996 \
-    liboverlay \
-    libtinyxml
+    fs_config_files
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusThreeDoze
-
-# TODO Alipay / WeChat
-#PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
-
-# audio
+# Audio
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
@@ -86,7 +62,33 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/vendor/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/vendor/etc/sound_trigger_platform_info.xml
 
-# Fingerprint sensor
+# Bluetooth
+PRODUCT_PACKAGES += \
+    libbt-vendor
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/FOSSConfig.xml:system/vendor/etc/FOSSConfig.xml \
+    $(LOCAL_PATH)/configs/qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml:system/vendor/etc/qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
+    $(LOCAL_PATH)/configs/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml:system/vendor/etc/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
+
+# Camera
+PRODUCT_PACKAGES += \
+    libcamera_parameters_shim
+
+# Display
+PRODUCT_PACKAGES += \
+    copybit.msm8996 \
+    gralloc.msm8996 \
+    hwcomposer.msm8996 \
+    memtrack.msm8996 \
+    liboverlay \
+    libtinyxml
+
+# Doze
+PRODUCT_PACKAGES += \
+    OneplusThreeDoze
+
+# Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd \
     fingerprint.msm8996
@@ -139,15 +141,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/vendor/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
-# TODO media_profiles in vendor???
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/vendor/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/vendor/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/vendor/etc/media_codecs_google_video.xml
 
+# Netutils
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
+    netutils-wrapper-1.0 \
+    libandroid_net
+
+# NFC
+PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     nfc_nci.msm8996 \
     NfcNci \
@@ -173,6 +179,17 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc \
+    $(LOCAL_PATH)/configs/init.qcom.sh:root/init.qcom.sh \
+    $(LOCAL_PATH)/configs/init.qcom.power.rc:root/init.qcom.power.rc \
+    $(LOCAL_PATH)/configs/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/configs/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    $(LOCAL_PATH)/configs/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    $(LOCAL_PATH)/configs/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/configs/fstab.qcom:root/fstab.qcom
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
@@ -180,19 +197,14 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     rild_socket
 
-# Wifi
+# Seccomp policy
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
-# VR
+# Sensors
 PRODUCT_PACKAGES += \
-    vr.msm8996
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml \
-    frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:system/etc/permissions/android.hardware.vr.headtracking.xml
+    sensors.msm8996
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -202,10 +214,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/vendor/etc/thermal-engine.conf \
     $(LOCAL_PATH)/configs/thermal-engine-vr.conf:system/vendor/etc/thermal-engine-vr.conf
 
+# VR
+PRODUCT_PACKAGES += \
+    vr.msm8996
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml \
+    frameworks/native/data/etc/android.hardware.vr.headtracking-0.xml:system/etc/permissions/android.hardware.vr.headtracking.xml
+
 # Wifi
-#PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -215,43 +236,3 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
-
-PRODUCT_PACKAGES += \
-    libcamera_parameters_shim
-
-# bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/FOSSConfig.xml:system/vendor/etc/FOSSConfig.xml \
-    $(LOCAL_PATH)/configs/qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml:system/vendor/etc/qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
-    $(LOCAL_PATH)/configs/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml:system/vendor/etc/qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
-
-# ANT+
-#PRODUCT_PACKAGES += \
-#    AntHalService \
-#    com.dsi.ant.antradio_library \
-#    libantradio
-
-#PRODUCT_COPY_FILES += \
-#    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
-
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
-# Sensors
-PRODUCT_PACKAGES += \
-    sensors.msm8996
-
-# Netutils
-PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0 \
-    libandroid_net
-
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
-    $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
-
