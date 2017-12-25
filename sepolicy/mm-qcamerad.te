@@ -10,3 +10,4 @@ binder_call(mm-qcamerad, servicemanager);
 allow servicemanager mm-qcamerad:dir { search };
 allow servicemanager mm-qcamerad:file { read open };
 allow servicemanager mm-qcamerad:process { getattr };
+allow mm-qcamerad system_data_file:lnk_file {read};
