@@ -21,6 +21,8 @@
 #
 
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
+$(call inherit-product, vendor/extras/configs/phone-xxhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, vendor/extras/configs/phone-xxhdpi-2048-hwui-memory.mk)
 $(call inherit-product, device/oneplus/oneplus3/hidl/hidl.mk)
 $(call inherit-product, device/oneplus/oneplus3/permissions.mk)
 
