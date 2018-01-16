@@ -18,7 +18,9 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
+
 -include vendor/oneplus/oneplus3/BoardConfigVendor.mk
+-include device/oppo/common/BoardConfigCommon.mk
 
 BOARD_PATH := device/oneplus/oneplus3
 
