@@ -142,6 +142,9 @@ BOARD_HAS_QCA_BT_ROME := true
 QCOM_BT_USE_BTNV := true
 TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8996
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
