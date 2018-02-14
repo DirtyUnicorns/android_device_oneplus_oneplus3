@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +21,8 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
@@ -88,5 +91,14 @@ public final class Utils {
     protected static boolean sensorsEnabled(Context context) {
         return pickUpEnabled(context) || handwaveGestureEnabled(context)
                 || pocketGestureEnabled(context);
+    }
+
+    protected static Sensor getSensor(SensorManager sm, String type) {
+        for (Sensor sensor : sm.getSensorList(Sensor.TYPE_ALL)) {
+            if (type.equals(sensor.getStringType())) {
+                return sensor;
+            }
+        }
+        return null;
     }
 }
