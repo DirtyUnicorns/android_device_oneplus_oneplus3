@@ -194,15 +194,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml
 
 # Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/configs/init.qcom.sh:root/init.qcom.sh \
-    $(LOCAL_PATH)/configs/init.qcom.power.rc:root/init.qcom.power.rc \
-    $(LOCAL_PATH)/configs/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/configs/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    $(LOCAL_PATH)/configs/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/configs/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/configs/fstab.qcom:root/fstab.qcom
+PRODUCT_PACKAGES += \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.power.rc \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    ueventd.qcom.rc \
+    fstab.qcom
 
 # RIL
 PRODUCT_PACKAGES += \
