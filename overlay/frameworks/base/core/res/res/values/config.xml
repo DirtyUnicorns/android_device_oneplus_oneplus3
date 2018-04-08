@@ -460,4 +460,7 @@
          memory over what the kernel keeps by default.  -1 keeps the default. -->
     <integer name="config_extraFreeKbytesAbsolute">40960</integer>
 
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
 </resources>
