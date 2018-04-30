@@ -109,6 +109,7 @@ void load_op3(const char *model) {
     property_override("ro.product.device", "OnePlus3");
     property_override("ro.build.description", "OnePlus3-user 8.0.0 OPR1.170623.032 31 release-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3:8.0.0/OPR1.170623.032/02281230:user/release-keys");
+    android::init::property_set("ro.vendor.patch.level", "Open Beta 37");
 }
 
 void load_op3t(const char *model) {
@@ -117,6 +118,7 @@ void load_op3t(const char *model) {
     property_override("ro.product.device", "OnePlus3T");
     property_override("ro.build.description", "OnePlus3-user 8.0.0 OPR1.170623.032 31 release-keys");
     property_override("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:8.0.0/OPR1.170623.032/02281230:user/release-keys");
+    android::init::property_set("ro.vendor.patch.level", "Open Beta 28");
     android::init::property_set("ro.power_profile.override", "power_profile_3t");
 }
 
