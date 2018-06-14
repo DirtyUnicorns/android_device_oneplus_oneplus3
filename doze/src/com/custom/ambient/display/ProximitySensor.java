@@ -26,6 +26,9 @@ import android.util.Log;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class ProximitySensor implements SensorEventListener {
 
@@ -42,11 +45,14 @@ public class ProximitySensor implements SensorEventListener {
     private boolean mSawNear = false;
     private long mInPocketTime = 0;
 
+    private final ExecutorService mExecutorService;
+
     public ProximitySensor(Context context) {
         mContext = context;
         mSensorManager = (SensorManager)
                 mContext.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        mExecutorService = Executors.newSingleThreadExecutor();
     }
 
     @Override
@@ -63,6 +69,10 @@ public class ProximitySensor implements SensorEventListener {
         if (isFileWritable(FPC_FILE)) {
             writeLine(FPC_FILE, isNear ? "1" : "0");
         }
+    }
+
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
     }
 
     private boolean shouldPulse(long timestamp) {
@@ -88,13 +98,17 @@ public class ProximitySensor implements SensorEventListener {
 
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
-        mSensorManager.registerListener(this, mSensor,
-                SensorManager.SENSOR_DELAY_NORMAL);
+        submit(() -> {
+            mSensorManager.registerListener(this, mSensor,
+                    SensorManager.SENSOR_DELAY_NORMAL);
+        });
     }
 
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
-        mSensorManager.unregisterListener(this, mSensor);
+        submit(() -> {
+            mSensorManager.unregisterListener(this, mSensor);
+        });
     }
 
     private boolean isFileWritable(String fname) {
