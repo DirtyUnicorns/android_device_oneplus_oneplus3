@@ -77,8 +77,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libcamera_shim \
-    libcamera_parameters_shim
+    libcamera_shim
 
 # Display
 PRODUCT_PACKAGES += \
