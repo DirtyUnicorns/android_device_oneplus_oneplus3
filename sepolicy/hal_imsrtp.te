@@ -1,1 +1,2 @@
 set_prop(hal_imsrtp, diag_prop);
+allow hal_imsrtp diag_device:chr_file { read write open ioctl };

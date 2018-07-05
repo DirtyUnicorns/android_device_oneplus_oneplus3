@@ -1,1 +1,2 @@
 set_prop(sensors, diag_prop)
+allow sensors diag_device:chr_file { read write open ioctl };

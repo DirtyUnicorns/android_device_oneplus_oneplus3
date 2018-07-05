@@ -1,0 +1,2 @@
+allow hal_wifi_default debugfs_wlan:dir search;
+

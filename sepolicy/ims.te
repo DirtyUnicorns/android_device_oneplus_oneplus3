@@ -1,1 +1,2 @@
 get_prop(ims, diag_prop);
+allow ims diag_device:chr_file { read write open ioctl };
