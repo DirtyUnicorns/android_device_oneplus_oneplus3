@@ -29,6 +29,7 @@ ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 audio.offload.min.duration.secs
 ro.af.client_heap_size_kbyte=7168
+audio_hal.period_multiplier=2
 
 # Bluetooth
 vendor.bluetooth.soc=rome
