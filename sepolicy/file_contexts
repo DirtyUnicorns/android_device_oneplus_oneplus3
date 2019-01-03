@@ -35,3 +35,6 @@
 /data/oemnvitems(/.*)?                                          u:object_r:vendor_radio_data_file:s0
 /dev/block/platform/soc/624000.ufshc/by-name/oem_dycnvbk        u:object_r:modem_efs_partition_device:s0
 /dev/block/platform/soc/624000.ufshc/by-name/oem_stanvbk        u:object_r:modem_efs_partition_device:s0
+
+# Usb
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.oneplus       u:object_r:hal_usb_default_exec:s0 
