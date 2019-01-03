@@ -398,4 +398,7 @@
     <!-- Button brightness -->
     <bool name="config_button_brightness_support">true</bool>
 
+    <!-- Whether device supports an alt. ambient display -->
+    <bool name="config_alt_ambient_display">true</bool>
+
 </resources>
