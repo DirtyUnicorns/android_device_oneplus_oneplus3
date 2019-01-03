@@ -164,9 +164,9 @@ TARGET_PROVIDES_KEYMASTER := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Mainfest
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/configs/framework_manifest.xml
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/configs/compatibility_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/hidl/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/hidl/manifest.xml
+DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/hidl/compatibility_matrix.xml
 
 # Media
 BOARD_SECCOMP_POLICY := $(PLATFORM_PATH)/seccomp
