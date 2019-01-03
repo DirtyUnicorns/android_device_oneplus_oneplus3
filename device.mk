@@ -23,13 +23,11 @@
 
 # Device was launched with M
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
-
 $(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -76,10 +74,6 @@ PRODUCT_COPY_FILES += \
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=16m \
@@ -198,19 +192,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
     libcamera_parameters_shim \
     libcamera_shim \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service.oneplus3
 
-# Connectivity Engine support (CNE)
+# CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne \
     services-ext
 
-# Display/Graphics
+# Display
 PRODUCT_PACKAGES += \
     copybit.msm8996 \
     gralloc.msm8996 \
@@ -235,15 +228,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES  += \
     ro.opengles.version=196610
 
-# Display calibration
 PRODUCT_PACKAGES += \
     FOSSConfig.xml \
     qdcm_calib_data_samsung_s6e3fa3_1080p_cmd_mode_dsi_panel.xml \
     qdcm_calib_data_samsung_s6e3fa5_1080p_cmd_mode_dsi_panel.xml
-
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -318,10 +306,6 @@ PRODUCT_PACKAGES += \
     lights.msm8996 \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@1.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -486,6 +470,3 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-# Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
