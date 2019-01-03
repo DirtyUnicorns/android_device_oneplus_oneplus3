@@ -1,6 +1,11 @@
 # Fingerprint
 genfscon sysfs /devices/soc/soc:fpc_fpc1020         u:object_r:sysfs_fpc:s0
 
+# Power
+genfscon debugfs /rpm_stats            u:object_r:debugfs_rpm:s0
+genfscon debugfs /rpm_master_stats     u:object_r:debugfs_rpm:s0
+genfscon debugfs /system_stats         u:object_r:debugfs_rpm:s0
+
 # Ril
 genfscon debugfs /rmt_storage                       u:object_r:debugfs_rmt_storage:s0
 
