@@ -220,6 +220,9 @@
          empty string is passed in -->
     <string name="config_ims_package">org.codeaurora.ims</string>
 
+    <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
     <!-- Flag specifying whether or not IMS will use the dynamic ImsResolver -->
     <bool name="config_dynamic_bind_ims">true</bool>
 
