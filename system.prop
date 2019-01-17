@@ -140,11 +140,6 @@ ro.nfc.port=I2C
 #property to enable WFD WL solution
 #ro.vendor.wl_library=libqti-wl.so
 
-#property for vendor specific library
-#ro.vendor.gt_library=libqti-gt.so
-#ro.vendor.at_library=libqti-at.so
-#sys.games.gt.prof=1
-
 #default usb composition
 #persist.sys.usb.config=diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
 
@@ -160,9 +155,6 @@ persist.qfp=false
 persist.sys.pd_enable=0
 #Disable rotator split feature
 sdm.debug.disable_rotator_split=1
-
-#Increase cached app limit
-ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 #Camera fullscreen doesn't show navigation bar
 Camera.no_navigation_bar=true
