@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
+ * Copyright (c) 2019 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +24,11 @@ import android.util.Log;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
-    private static final String TAG = "OneplusPocketMode";
+  private static final String TAG = "OneplusPocketMode";
 
-    @Override
-    public void onReceive(final Context context, Intent intent) {
-        Log.d(TAG, "Starting");
-        context.startService(new Intent(context, PocketModeService.class));
-    }
+  @Override
+  public void onReceive(final Context context, Intent intent) {
+    Log.d(TAG, "Starting");
+    context.startService(new Intent(context, PocketModeService.class));
+  }
 }

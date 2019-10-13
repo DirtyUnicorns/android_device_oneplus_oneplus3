@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
+ * Copyright (c) 2019 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,58 +26,59 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class PocketModeService extends Service {
-    private static final String TAG = "PocketModeService";
-    private static final boolean DEBUG = false;
+  private static final String TAG = "PocketModeService";
+  private static final boolean DEBUG = false;
 
-    private PocketSensor mPocketSensor;
+  private PocketSensor mPocketSensor;
 
-    @Override
-    public void onCreate() {
-        if (DEBUG) Log.d(TAG, "Creating service");
-        mPocketSensor = new PocketSensor(this);
+  @Override
+  public void onCreate() {
+    if (DEBUG) Log.d(TAG, "Creating service");
+    mPocketSensor = new PocketSensor(this);
 
-        IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(mScreenStateReceiver, screenStateFilter);
-    }
+    IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+    screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
+    registerReceiver(mScreenStateReceiver, screenStateFilter);
+  }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        if (DEBUG) Log.d(TAG, "Starting service");
-        return START_STICKY;
-    }
+  @Override
+  public int onStartCommand(Intent intent, int flags, int startId) {
+    if (DEBUG) Log.d(TAG, "Starting service");
+    return START_STICKY;
+  }
 
-    @Override
-    public void onDestroy() {
-        if (DEBUG) Log.d(TAG, "Destroying service");
-        super.onDestroy();
-        this.unregisterReceiver(mScreenStateReceiver);
-        mPocketSensor.disable();
-    }
+  @Override
+  public void onDestroy() {
+    if (DEBUG) Log.d(TAG, "Destroying service");
+    super.onDestroy();
+    this.unregisterReceiver(mScreenStateReceiver);
+    mPocketSensor.disable();
+  }
 
-    @Override
-    public IBinder onBind(Intent intent) {
-        return null;
-    }
+  @Override
+  public IBinder onBind(Intent intent) {
+    return null;
+  }
 
-    private void onDisplayOn() {
-        if (DEBUG) Log.d(TAG, "Display on");
-        mPocketSensor.disable();
-    }
+  private void onDisplayOn() {
+    if (DEBUG) Log.d(TAG, "Display on");
+    mPocketSensor.disable();
+  }
 
-    private void onDisplayOff() {
-        if (DEBUG) Log.d(TAG, "Display off");
-        mPocketSensor.enable();
-    }
+  private void onDisplayOff() {
+    if (DEBUG) Log.d(TAG, "Display off");
+    mPocketSensor.enable();
+  }
 
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
+  private BroadcastReceiver mScreenStateReceiver =
+      new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                onDisplayOn();
-            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                onDisplayOff();
-            }
+          if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+            onDisplayOn();
+          } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+            onDisplayOff();
+          }
         }
-    };
+      };
 }
