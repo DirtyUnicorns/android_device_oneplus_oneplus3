@@ -39,8 +39,7 @@ sdm.debug.disable_skip_validate=1
 vendor.gralloc.enable_fb_ubwc=1
 vendor.display.disable_skip_validate=1
 vendor.display.perf_hint_window=50
-# Property to disable wfd ubwc
-vendor.gralloc.disable_wb_ubwc=1
+
 # Property to enable display default color mode
 vendor.display.enable_default_color_mode=1
 
@@ -142,9 +141,6 @@ ro.nfc.port=I2C
 #property to enable WFD WL solution
 #ro.vendor.wl_library=libqti-wl.so
 
-#default usb composition
-#persist.sys.usb.config=diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
-
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
@@ -181,21 +177,6 @@ ro.qti.sensors.dev_ori=false
 ro.qti.sensors.pmd=false
 ro.qti.sensors.sta_detect=false
 ro.qti.sensors.mot_detect=false
-
-# ro.location properties below are used in conjunction
-# with NLP_MODE setting in /vendor/etc/izat.conf
-# either as the main network provider or as a fallback
-# provider depending on NLP_MODE that is set
-# These properties are optional and will not cause
-# issues if not set to existing packages.
-# ro.location.osnlp.package sets the name of default
-# OS sepecific network location provider package to use
-# ro.location.osnlp.region.package is set to the name
-# of the alternative network location provider package
-# to be used for a particular region where the default
-# network location provider is not functional
-ro.location.osnlp.package=com.google.android.gms
-ro.location.osnlp.region.package=
 
 #mbn ota config
 persist.vendor.radio.hw_mbn_update=0
