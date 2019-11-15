@@ -83,7 +83,7 @@
    "repository" : "DirtyUnicorns/android_vendor_qcom_opensource_interfaces",
    "target_path": "vendor/qcom/opensource/interfaces",
    "branch"     : "q10x"
- }
+ },
  {
    "repository" : "DirtyUnicorns/android_vendor_qcom_opensource_power",
    "target_path": "vendor/qcom/opensource/power",
