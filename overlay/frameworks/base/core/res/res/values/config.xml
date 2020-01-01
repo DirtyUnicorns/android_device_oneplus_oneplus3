@@ -391,4 +391,7 @@
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
 
+    <!-- Whether the display blanks itself when transitioning from a Doze to a non Doze state -->
+    <bool name="config_displayBlanksAfterDoze">true</bool>
+
 </resources>
