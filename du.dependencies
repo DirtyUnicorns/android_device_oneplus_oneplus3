@@ -98,5 +98,10 @@
    "repository" : "DirtyUnicorns/android_vendor_qcom_opensource_power",
    "target_path": "vendor/qcom/opensource/power",
    "branch"     : "q10x"
+ },
+ {
+   "repository":  "gitlab.com/DirtyUnicorns/android_vendor_pixelgapps",
+   "target_path": "vendor/pixelgapps",
+   "branch":      "q10x"
  }
 ]

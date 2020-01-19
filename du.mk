@@ -29,3 +29,6 @@ PRODUCT_BRAND := OnePlus
 PRODUCT_MANUFACTURER := OnePlus
 
 BUILD_FINGERPRINT := "OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1911042107:user/release-keys"
+
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+
