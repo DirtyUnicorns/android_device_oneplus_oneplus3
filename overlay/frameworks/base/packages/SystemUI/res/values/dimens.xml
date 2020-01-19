@@ -16,6 +16,11 @@
 */
 -->
 <resources>
+
     <dimen name="status_bar_padding_start">12dp</dimen>
     <dimen name="status_bar_padding_end">12dp</dimen>
+
+    <!-- Volume panel -->
+    <dimen name="volume_dialog_panel_transparent_padding_left">4dp</dimen>
+
 </resources>
